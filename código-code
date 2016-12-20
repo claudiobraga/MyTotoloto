@@ -1,0 +1,49 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class Totoloto{
+    public static void main(String[] args){
+        int[] myList = new int[5];
+        int[] myListAlea = new int [5];
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("\t\t\t!!! ATENÇÃO !!! ");
+        System.out.println(" Só deve introduzir 5 Números de 1 à 49.");
+        System.out.println(" ");
+
+        int numero, valores, chave, total = 0;
+        // Introdução dos 5 números de 1 à 49
+        for (int i = 0; i < 5; i++)
+        {
+            System.out.println("Introduza o " + (i + 1)+ " Número : ");
+            // Ler os números introduzidos do teclado.
+            numero = entrada.nextInt();
+            // Guardar os núemros introduzidos no Array(myList).
+            myList[i]= numero;
+        }
+        // Gerar 5 números
+        for (int j = 0; j < 5; j++)
+        {
+            // Guardar os números gerados no Array, e gerá-los aleatoriamente.
+            myListAlea[j] =  (int) (Math.random() * 49);
+            System.out.println("" + myListAlea[j]);
+        }
+
+        for (int k = 0; k < 5; k++)
+        {
+            for (int m = 0; m < 5; m++)
+            {
+                if (myList[k] == myListAlea[m])
+                {
+                    System.out.println(" Resultado " + (m + 1) + " certo " + myListAlea[m]);
+                    total = total + myListAlea[m];
+                }
+                else
+                {
+                    System.out.println( "");
+                }
+            }
+        }
+
+        System.out.println(" Total de acertos " + total );
+
+    }
+}
